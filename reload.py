@@ -43,14 +43,14 @@ if __name__ == "__main__":
 
 
 #path to saved model weights 
-    save_dir='newdirectory/training_tests/epochs/final100.weights.h5'
+    save_dir='final_weights/training_tests/epochs/final100.weights.h5'
     model.load_weights(save_dir)
 
-    pred_data = model.predict(input_data, batch_size=1) 
+    pred_data = model.predict(input_data, batch_size=1) #i guess could be larger than batch_size = 1 
 
     loss_fn = tf.keras.losses.MeanSquaredError()
     loss_value = loss_fn(output_data, pred_data).numpy()
     print('mean-squared error of fitted model is: {0:.3E}'.format(loss_value))
 
-    plotout(input_data[:,:,0], output_data)    #last dim of input_data is for embed
+#    plotout(input_data[:,:,0], output_data)    #plot input vs output, last dim of input_data is for embed
     plotout(pred_data, output_data)

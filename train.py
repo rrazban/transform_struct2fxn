@@ -40,10 +40,11 @@ for device in gpu_devices:
 
 
 def load_data(filename):
-    input_data = scipy.io.loadmat(filename)['sc']
+    data = scipy.io.loadmat(filename)
+    input_data = data['sc']
     input_data = input_data.reshape(input_data.shape[0], input_data.shape[1], 1) #need the extra 1 dimension for embed dim
 
-    output_data = scipy.io.loadmat(filename)['fc']
+    output_data = data['fc']
     return input_data, output_data
 
 

@@ -12,7 +12,7 @@ from train import make_model, load_data
 
 
 ####MANNUALLY ADJUST FOLD TO TRAIN ON HERE*********
-fold = 1 
+fold = 9 
 
 #path to save model weights 
 save_dir='final_weights/fold{0}.weights.h5'.format(fold)
